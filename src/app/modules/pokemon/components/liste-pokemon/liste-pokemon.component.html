@@ -22,7 +22,8 @@
   </div>
 
 <div class="container-fluid ">
-  <div class="row justify-content-center">
+  <div class="w-100 text-center"  *ngIf="!resultPokemon"  >Aucun pokemons trouvé</div>
+  <div class="row justify-content-center" *ngIf="resultPokemon" >
     <div  appBorderCard borderCard="red" class="card   mb-3 p-20 m-2 rounded-3 shadow-lg" style="width: 18rem;" *ngFor="let item of pokemonList;" >
       <div class="row " >
         <img src="{{item.picture}}" class="card-img-top" alt="{{item.name}}" (click)="goToPokemonFiche(item);">
@@ -52,6 +53,5 @@
         Supprimer
       </button>
     </div>
-
   </div>
 </div>
