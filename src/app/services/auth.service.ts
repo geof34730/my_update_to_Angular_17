@@ -8,13 +8,15 @@ export class AuthService {
   isLogged: boolean = false
   redirectUrl: string;
 
-
-
-
   login(name: string, password: string):Observable<boolean>{
+
+    console.log(`GO PARAMS LOGIN SERVICE ${name} - ${password}`);
+
     const isLogged = (name=="pokemon" && password=="pokemon");
+
+    console.log(`isLogged: ${isLogged}`)
     return of(isLogged).pipe(
-      delay(1000),
+      delay(3000),
       tap(isLogged => this.isLogged = isLogged)
     );
   }
